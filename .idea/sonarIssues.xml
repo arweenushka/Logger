@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/main/java/com/adidas/creation/portal/automation/commonE2E/components/ItemSectionsMenuComponent.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/main/java/com/adidas/creation/portal/automation/commonE2E/pages/AllFilesPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/main/java/com/adidas/creation/portal/automation/productsE2E/pages/ProductDetailsPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/test/java/com/adidas/creation/portal/automation/common/features/serenitySteps/CommonSteps.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/test/java/com/adidas/creation/portal/automation/productsE2E/features/serenitySteps/ProductsE2ESteps.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/test/java/com/adidas/creation/portal/automation/productsE2E/features/stepsDefinitions/ProductsE2EDefinitions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../cp/creation_portal/e2e-test/src/test/resources/features/jenkins/CP-1390.feature">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/gradle/wrapper/gradle-wrapper.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/main/java/com/adidasDesignPortalAutomation/environment/MacEnvironment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/main/java/com/adidasDesignPortalAutomation/home/pages/HomePage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/main/java/com/adidasDesignPortalAutomation/training/pages/OnlineTrainingDetailsPage.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/test/java/com/adidasDesignPortalAutomation/home/features/serenitySteps/HomeSteps.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/test/java/com/adidasDesignPortalAutomation/home/features/stepsDefinitions/HomeDefinitions.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/test/java/com/adidasDesignPortalAutomation/training/features/serenitySteps/TrainingSteps.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../dc/dp-test-automation/src/test/resources/features/CP-4796.feature">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
