@@ -57,18 +57,14 @@ public class CalendarPage {
         for (WebElement day : untrackedFridaysInCalendar) {
 
             Thread.sleep(7000);
-            //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
-
             //open the day in calendar
             WebDriverWait wait = new WebDriverWait(webDriver, EXPLICIT_WAIT);
             wait.until(ExpectedConditions.elementToBeClickable(day)).click();
 
             Thread.sleep(5000);
-            //wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
-
             //fill all time inputs
             fillTimeInputs(startTime, endTime, startBreak, endBreak);
-            //saveTime();
+            saveTime();
         }
     }
 
@@ -83,7 +79,7 @@ public class CalendarPage {
             Thread.sleep(5000);
             //fill all time inputs
             fillTimeInputs(startTime, endTime, startBreak, endBreak);
-            //saveTime();
+            saveTime();
         }
     }
 
