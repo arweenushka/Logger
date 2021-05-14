@@ -1,2 +1,0 @@
-# Logger
-Log your time
