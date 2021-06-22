@@ -1,5 +1,6 @@
 package adidas.alive.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class CalendarPage {
 
-    private static final long EXPLICIT_WAIT = 100;
+    private static final long EXPLICIT_WAIT = 20;
     private WebDriver webDriver;
 
     @FindBy(id = "__button4")
@@ -19,12 +20,6 @@ public class CalendarPage {
 
     @FindBy(id = "ivuFrm_page0ivu1")
     WebElement frame;
-
-    @FindBy(xpath = "//span[contains(@aria-label,'icon-alert')]")
-    List<WebElement> untrackedDaysInCalendar;
-
-    @FindBy(xpath = "//div[contains(@id,'hbox')]//div[5]/div/div[2]/span[contains(@aria-label,'icon-alert')]")
-    List<WebElement> untrackedFridaysInCalendar;
 
     @FindBy(id = "__picker0-inner")
     WebElement startTimeInput;
@@ -46,7 +41,7 @@ public class CalendarPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    public void switchToMonthView() throws InterruptedException {
+    public void switchToMonthView() {
         webDriver.switchTo().frame(frame);
         WebDriverWait wait = new WebDriverWait(webDriver, EXPLICIT_WAIT);
         wait.until(ExpectedConditions.elementToBeClickable(monthBtn)).click();
@@ -54,32 +49,50 @@ public class CalendarPage {
     }
 
     public void fillTimePerShortDay(String startTime, String endTime, String startBreak, String endBreak) throws InterruptedException {
-        for (WebElement day : untrackedFridaysInCalendar) {
+        WebDriverWait wait = new WebDriverWait(webDriver, EXPLICIT_WAIT);
+        List<WebElement> untrackedFridaysInCalendar;
+        untrackedFridaysInCalendar = webDriver.findElements(By.xpath("//div[contains(@id,'hbox')]//div[5]/div/div[2]/span[contains(@aria-label,'icon-alert')]"));
+        int amountOfFridays = untrackedFridaysInCalendar.size();
 
-            Thread.sleep(7000);
+        for (int i = 0; i < amountOfFridays; i++) {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
+
+            //reinitialize elements as page is reloaded after each "save"
+            untrackedFridaysInCalendar = webDriver.findElements(By.xpath("//div[contains(@id,'hbox')]//div[5]/div/div[2]/span[contains(@aria-label,'icon-alert')]"));
+
             //open the day in calendar
-            WebDriverWait wait = new WebDriverWait(webDriver, EXPLICIT_WAIT);
-            wait.until(ExpectedConditions.elementToBeClickable(day)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(untrackedFridaysInCalendar.get(0))).click();
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
 
-            Thread.sleep(5000);
             //fill all time inputs
             fillTimeInputs(startTime, endTime, startBreak, endBreak);
             saveTime();
+
         }
     }
 
     public void fillTimePerFullDay(String startTime, String endTime, String startBreak, String endBreak) throws InterruptedException {
-        for (WebElement day : untrackedDaysInCalendar) {
+        WebDriverWait wait = new WebDriverWait(webDriver, EXPLICIT_WAIT);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
 
-            Thread.sleep(7000);
+        List<WebElement> untrackedDaysInCalendar;
+        untrackedDaysInCalendar = webDriver.findElements(By.xpath("//span[contains(@aria-label,'icon-alert')]"));
+        int amountOfDays = untrackedDaysInCalendar.size();
+
+        for (int i = 0; i < amountOfDays; i++) {
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
+
+            //reinitialize elements as page is reloaded after each "save"
+            untrackedDaysInCalendar = webDriver.findElements(By.xpath("//span[contains(@aria-label,'icon-alert')]"));
+
             //open the day in calendar
-            WebDriverWait wait = new WebDriverWait(webDriver, EXPLICIT_WAIT);
-            wait.until(ExpectedConditions.elementToBeClickable(day)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(untrackedDaysInCalendar.get(0))).click();
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
 
-            Thread.sleep(5000);
             //fill all time inputs
             fillTimeInputs(startTime, endTime, startBreak, endBreak);
             saveTime();
+
         }
     }
 
