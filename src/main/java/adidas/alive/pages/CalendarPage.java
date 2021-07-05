@@ -36,6 +36,13 @@ public class CalendarPage {
     @FindBy(id = "__button2")
     WebElement saveBtn;
 
+    @FindBy(xpath = "//div[contains(@class,'selected')]/..//bdi")
+    WebElement selectedMonthLbl;
+
+    public String getSelectedMonthText() {
+        return selectedMonthLbl.getText();
+    }
+
     public CalendarPage(WebDriver driver) {
         webDriver = driver;
         PageFactory.initElements(webDriver, this);

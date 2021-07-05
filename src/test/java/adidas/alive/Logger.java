@@ -39,12 +39,19 @@ public class Logger {
         calendarPage.fillTimePerShortDay(startTimeF, endTimeF, startBreakF, endBreakF);
 
         //fill all mondays-thursdays
-        calendarPage.fillTimePerFullDay(startTime, endTime, startBreak, endBreak);
+        //if it is summer schedule, then fill whole week  with short days
+        if (calendarPage.getSelectedMonthText().equalsIgnoreCase("jul")
+                || calendarPage.getSelectedMonthText().equalsIgnoreCase("ago")) {
+            calendarPage.fillTimePerFullDay(startTimeF, endTimeF, startBreakF, endBreakF);
+        } else {
+            calendarPage.fillTimePerFullDay(startTime, endTime, startBreak, endBreak);
+        }
+
     }
 
     @AfterTest
     public void tearDown() {
-        if(webDriver != null)
+        if (webDriver != null)
             webDriver.quit();
     }
 }
