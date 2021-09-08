@@ -15,7 +15,7 @@ public class Logger {
     private String url = "https://internal-portal.adidas-group.com/irj/portal/NewOnlineTime?";
 
     //time for mondays-thursdays
-    private String startTime = "0800";
+    private String startTime = "0900";
     private String endTime = "1830";
     private String startBreak = "1300";
     private String endBreak = "1400";
