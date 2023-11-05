@@ -8,11 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class CalendarPage {
 
-    private static final long EXPLICIT_WAIT = 20;
+    private static final Duration EXPLICIT_WAIT = Duration.ofSeconds(20);
     private WebDriver webDriver;
 
     @FindBy(id = "__button4")

@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public final class PropertiesResourceManager {
 
-    private static final String BROWSER = "browser";
+    //private static final String BROWSER = "browser";
     private static String currentBrowser;
 
     public static void initProperties() {
@@ -19,7 +19,9 @@ public final class PropertiesResourceManager {
         }catch (IOException e) {
             e.printStackTrace();
         }
-        currentBrowser = properties.getProperty(BROWSER);
+        //updated to get properties from pom file and to specify browser using command line
+        currentBrowser =  System.getProperty("browser");
+        //currentBrowser = properties.getProperty(BROWSER);
     }
 
     public static String getCurrentBrowser() {
